@@ -1,13 +1,13 @@
 #!/bin/bash
-echo "USAGE: ./rodaTodos.sh <nElements> <outputFile>"
-if [ "$#" -ne 2 ]; then
+echo "USAGE: ./rodaTodos.sh"
+if [ "$#" -ne 0 ]; then
     echo "Error: Missing arguments."
     echo "Usage: ./rodaTodos.sh <nElements> <outputFile>"
     exit 1
 fi
 
-nElements=$1
-outputFile=$2
+nElements=1000
+outputFile=parteA.txt
 
 echo "$0 rodando no host " `hostname`  
 echo "$0 rodando no host " `hostname` >"$outputFile"
