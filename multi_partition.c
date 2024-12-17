@@ -38,17 +38,69 @@ void preencheAleatorio(long long* array, size_t size) {
     }
 }
 
-void sortArray(long long* array, size_t size) {
-    for (size_t i = 0; i < size - 1; i++) {
-        for (size_t j = 0; j < size - i - 1; j++) {
-            if (array[j] > array[j + 1]) {
-                // Swap the elements
-                long long temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
+void merge(long long* array, size_t left, size_t mid, size_t right) {
+    size_t n1 = mid - left + 1; // Size of the left subarray
+    size_t n2 = right - mid;    // Size of the right subarray
+
+    // Create temporary arrays
+    long long* L = (long long*)malloc(n1 * sizeof(long long));
+    long long* R = (long long*)malloc(n2 * sizeof(long long));
+
+    // Copy data to temporary arrays
+    for (size_t i = 0; i < n1; i++)
+        L[i] = array[left + i];
+    for (size_t j = 0; j < n2; j++)
+        R[j] = array[mid + 1 + j];
+
+    // Merge the temporary arrays back into the original array
+    size_t i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            array[k] = L[i];
+            i++;
+        } else {
+            array[k] = R[j];
+            j++;
         }
+        k++;
     }
+
+    // Copy any remaining elements from the left subarray
+    while (i < n1) {
+        array[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Copy any remaining elements from the right subarray
+    while (j < n2) {
+        array[k] = R[j];
+        j++;
+        k++;
+    }
+
+    // Free the temporary arrays
+    free(L);
+    free(R);
+}
+
+// Recursive function to implement Merge Sort
+void mergeSort(long long* array, size_t left, size_t right) {
+    if (left < right) {
+        size_t mid = left + (right - left) / 2;
+
+        // Sort the left and right halves
+        mergeSort(array, left, mid);
+        mergeSort(array, mid + 1, right);
+
+        // Merge the sorted halves
+        merge(array, left, mid, right);
+    }
+}
+
+// Wrapper function for Merge Sort
+void sortArray(long long* array, size_t size) {
+    mergeSort(array, 0, size - 1);
 }
 
 void generatePartitionArray(long long* P, size_t np) {
