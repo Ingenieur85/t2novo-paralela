@@ -20,7 +20,7 @@ GRR: 20223831
                                             // will have a maximum 500 million FLOAT elements
                                             // which fits in 2 GB of RAM
 
-#define CACHE_SIZE (64*1024*1024) // Faz copias de pelo menos 64 Mb de dados
+#define CACHE_SIZE (32*1024*1024) // Faz copias de pelo menos 32 Mb de dados
                                   // para garantir que a cache não interfira na medição
 
 
@@ -81,6 +81,19 @@ typedef struct {
 
 
 // Função que vai ser passada para as threads
+// Helper function for binary search
+int binary_search(long long *P, int np, long long value) {
+    int left = 0, right = np - 1;
+    while (left < right) {
+        int mid = (left + right) / 2;
+        if (value < P[mid])
+            right = mid;
+        else
+            left = mid + 1;
+    }
+    return left;
+}
+
 void *thread_func(void *arg) {
     ThreadData *data = (ThreadData *)arg;
     int n = data->n, np = data->np;
@@ -88,24 +101,29 @@ void *thread_func(void *arg) {
     unsigned int *Pos = data->Pos;
     int *faixa_count = data->faixa_count, *faixa_indices = data->faixa_indices;
 
-    // Divide o input entre as thredas
+    // Divide input range for this thread
     int chunk_size = (n + data->num_threads - 1) / data->num_threads;
     int start = data->thread_id * chunk_size;
     int end = (start + chunk_size > n) ? n : start + chunk_size;
 
-    // Primeira passada: Conta elementos em cada faixa
+    // Local faixa_count to reduce contention
+    int faixa_count_local[np];
+    memset(faixa_count_local, 0, sizeof(int) * np);
+
+    // First pass: Count elements in each faixa using binary search
     for (int i = start; i < end; i++) {
-        int faixa = 0;
-        while (faixa < np - 1 && Input[i] >= P[faixa]) {
-            faixa++;
-        }
-        __sync_fetch_and_add(&faixa_count[faixa], 1); // Atomic increment
+        int faixa = binary_search(P, np, Input[i]);
+        faixa_count_local[faixa]++;
     }
 
-    // Sincroniza de novo as threads
+    // Combine local counts into global faixa_count
+    for (int i = 0; i < np; i++) {
+        __sync_fetch_and_add(&faixa_count[i], faixa_count_local[i]);
+    }
+
     pthread_barrier_wait(data->barrier);
 
-    // Calcula o indice da faixa
+    // Calculate faixa_indices in thread 0
     if (data->thread_id == 0) {
         Pos[0] = 0;
         for (int i = 1; i < np; i++) {
@@ -116,21 +134,18 @@ void *thread_func(void *arg) {
         }
     }
 
-    // Sincroniza as threads antes de continuar para a segunda passada
     pthread_barrier_wait(data->barrier);
 
-    // Coloca os elementos na faixa correta
+    // Second pass: Place elements into Output using binary search
     for (int i = start; i < end; i++) {
-        int faixa = 0;
-        while (faixa < np - 1 && Input[i] >= P[faixa]) {
-            faixa++;
-        }
-        int idx = __sync_fetch_and_add(&faixa_indices[faixa], 1); // Atomic fetch and increment
+        int faixa = binary_search(P, np, Input[i]);
+        int idx = __sync_fetch_and_add(&faixa_indices[faixa], 1);
         Output[idx] = Input[i];
     }
 
     return NULL;
 }
+
 
 void multi_partition_parallel(long long *Input, int n, long long *P, int np, 
                               long long *Output, unsigned int *Pos, int num_threads) {
