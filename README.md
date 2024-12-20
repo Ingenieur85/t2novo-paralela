@@ -13,9 +13,14 @@ make
 
 Para rodar todos as partes A e B (usado para a planilha), faça:
 ```
-./run.sh
+sbatch --exclusive roda_parteA.sh
 ```
-o script run.sh vai chamar o roda-todos-slurm.sh para cada um dos tamanhos e vai salvar os resultados em um arquivo .out
+e depois
+```
+sbatch --exclusive roda_parteB.sh
+```
+
+Fiz um script dedicado para cada parte, a fim de poder depurar com mais facilidade.
 
 ### Descrição
 

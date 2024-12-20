@@ -14,7 +14,7 @@ GRR: 20223831
 #include "verifica_particoes.h"
 
 #define INPUT_SIZE 8000000 // 8M, conforme e-mail do professor
-#define NTIMES 10 // Numero de vezes foi ajustado no script slurm. Dessa forma não há interferencia da cache
+#define NTIMES 5 // Coloquei como 5 para não estourar os 5 minutos para o experimento B.
 #define MAX_THREADS 64
 #define MAX_TOTAL_ELEMENTS (500*1000*1000) // if each float takes 4 bytes
                                             // will have a maximum 500 million FLOAT elements
@@ -118,20 +118,6 @@ void generatePartitionArray(long long* P, size_t np) {
     sortArray(P, np);
 }
 
-// Utilizei uma struct para passar os parametros para as threads
-typedef struct {
-    long long *Input;
-    long long *P;
-    long long *Output;
-    unsigned int *Pos;
-    int *faixa_count;
-    int *faixa_indices;
-    int n, np;
-    int thread_id, num_threads;
-    pthread_barrier_t *barrier;
-} ThreadData;
-
-
 // Função que vai ser passada para as threads
 // Helper function for binary search
 int binary_search(long long *P, int np, long long value) {
@@ -145,6 +131,21 @@ int binary_search(long long *P, int np, long long value) {
     }
     return left;
 }
+
+
+// Utilizei uma struct para passar os parametros para as threads
+typedef struct {
+    long long *Input;
+    long long *P;
+    long long *Output;
+    unsigned int *Pos;
+    int *faixa_count;
+    int *faixa_indices;
+    int n, np;
+    int thread_id, num_threads;
+    pthread_barrier_t *barrier;
+} ThreadData;
+
 
 void *thread_func(void *arg) {
     ThreadData *data = (ThreadData *)arg;
@@ -242,33 +243,33 @@ void multi_partition_parallel(long long *Input, int n, long long *P, int np,
 int main(int argc, char* argv[]) {
 
     int nThreads;
-    int nTotalElements; // O numero de elementos no Vetor P !!
+    int np; // O numero de elementos no Vetor P !!
     
     chronometer_t parallelReductionTime;
     
     if( argc != 3 ) {
-         printf( "usage: %s <nTotalElements> <nThreads>\n" ,
+         printf( "usage: %s <nP> <nThreads>\n" ,
                  argv[0] ); 
          return 0;
     } else {
          nThreads = atoi( argv[2] );
          if( nThreads == 0 ) {
-              printf( "usage: %s <nTotalElements> <nThreads>\n" ,
+              printf( "usage: %s <nP> <nThreads>\n" ,
                  argv[0] );
               printf( "<nThreads> can't be 0\n" );
               return 0;
          }     
          if( nThreads > MAX_THREADS ) {  
-              printf( "usage: %s <nTotalElements> <nThreads>\n" ,
+              printf( "usage: %s <nP> <nThreads>\n" ,
                  argv[0] );
               printf( "<nThreads> must be less than %d\n", MAX_THREADS );
               return 0;
          }     
-         nTotalElements = atoi( argv[1] ); 
-         if( nTotalElements > MAX_TOTAL_ELEMENTS ) {  
+         np = atoi( argv[1] ); 
+         if( np > MAX_TOTAL_ELEMENTS ) {  
               printf( "usage: %s <nTotalElements> <nThreads>\n" ,
                  argv[0] );
-              printf( "<nTotalElements> must be up to %d\n", MAX_TOTAL_ELEMENTS );
+              printf( "<nP> must be up to %d\n", MAX_TOTAL_ELEMENTS );
               return 0;
          }     
     }
@@ -276,7 +277,6 @@ int main(int argc, char* argv[]) {
     srand(time(NULL));
 
     int n = INPUT_SIZE;
-    int np = nTotalElements;
 
     // Tive que alocar dinamicamente pois estava tendo segmentation faults na minha máquina
     // Isso diminuiu a performance um pouco
@@ -329,26 +329,11 @@ int main(int argc, char* argv[]) {
                                       ((double)1000*1000*1000);
     printf( "total_time_in_seconds: %lf s\n", total_time_in_seconds );
                                   
-    double OPS = ((double)nTotalElements*NTIMES)/total_time_in_seconds;
-    double MEPS = OPS/1000000;
+    double OPS = ((double)INPUT_SIZE*NTIMES)/total_time_in_seconds;
+    double MEPS = OPS/(1000*1000);
     printf( "Throughput: %lf MEP/s\n", MEPS );
     
     verifica_particoes(Input, n, P, np, Output, Pos);
-
-/* PARA IMPRIMIR OS VETORES
-    // Print Output and Pos
-    printf("Vetor Output: ");
-    for (int i = 0; i < n; i++) {
-        printf("%lld ", Output[i]);
-    }
-    printf("\n");
-
-    printf("Vetor Pos: ");
-    for (int i = 0; i < np; i++) {
-        printf("%d ", Pos[i]);
-    }
-    printf("\n");
-*/
 
     for (int i = 0; i < num_copies; i++) {
         free(Input_copies[i]);

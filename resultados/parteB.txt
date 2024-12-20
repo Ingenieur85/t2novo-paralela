@@ -1,0 +1,401 @@
+/var/spool/slurmd/job14926/slurm_script rodando no host  wz12
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 13028806177 ns for 1 ops 
+        ==> each op takes 13028806177 ns
+total_time_in_seconds: 13.028806 s
+Throughput: 0.038377 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 13103714586 ns for 1 ops 
+        ==> each op takes 13103714586 ns
+total_time_in_seconds: 13.103715 s
+Throughput: 0.038157 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 13051047413 ns for 1 ops 
+        ==> each op takes 13051047413 ns
+total_time_in_seconds: 13.051047 s
+Throughput: 0.038311 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 13046939419 ns for 1 ops 
+        ==> each op takes 13046939419 ns
+total_time_in_seconds: 13.046939 s
+Throughput: 0.038323 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 13073672707 ns for 1 ops 
+        ==> each op takes 13073672707 ns
+total_time_in_seconds: 13.073673 s
+Throughput: 0.038245 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 7449681905 ns for 1 ops 
+        ==> each op takes 7449681905 ns
+total_time_in_seconds: 7.449682 s
+Throughput: 0.067117 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 7341989998 ns for 1 ops 
+        ==> each op takes 7341989998 ns
+total_time_in_seconds: 7.341990 s
+Throughput: 0.068101 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 7535415852 ns for 1 ops 
+        ==> each op takes 7535415852 ns
+total_time_in_seconds: 7.535416 s
+Throughput: 0.066353 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 7440600582 ns for 1 ops 
+        ==> each op takes 7440600582 ns
+total_time_in_seconds: 7.440601 s
+Throughput: 0.067199 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 7568351883 ns for 1 ops 
+        ==> each op takes 7568351883 ns
+total_time_in_seconds: 7.568352 s
+Throughput: 0.066065 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 5238444847 ns for 1 ops 
+        ==> each op takes 5238444847 ns
+total_time_in_seconds: 5.238445 s
+Throughput: 0.095448 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 5241136880 ns for 1 ops 
+        ==> each op takes 5241136880 ns
+total_time_in_seconds: 5.241137 s
+Throughput: 0.095399 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 5221320602 ns for 1 ops 
+        ==> each op takes 5221320602 ns
+total_time_in_seconds: 5.221321 s
+Throughput: 0.095761 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 5240475762 ns for 1 ops 
+        ==> each op takes 5240475762 ns
+total_time_in_seconds: 5.240476 s
+Throughput: 0.095411 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 5217979116 ns for 1 ops 
+        ==> each op takes 5217979116 ns
+total_time_in_seconds: 5.217979 s
+Throughput: 0.095823 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3978684091 ns for 1 ops 
+        ==> each op takes 3978684091 ns
+total_time_in_seconds: 3.978684 s
+Throughput: 0.125670 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3981558479 ns for 1 ops 
+        ==> each op takes 3981558479 ns
+total_time_in_seconds: 3.981558 s
+Throughput: 0.125579 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3980946669 ns for 1 ops 
+        ==> each op takes 3980946669 ns
+total_time_in_seconds: 3.980947 s
+Throughput: 0.125598 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3998130140 ns for 1 ops 
+        ==> each op takes 3998130140 ns
+total_time_in_seconds: 3.998130 s
+Throughput: 0.125058 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3995370571 ns for 1 ops 
+        ==> each op takes 3995370571 ns
+total_time_in_seconds: 3.995371 s
+Throughput: 0.125145 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3250259827 ns for 1 ops 
+        ==> each op takes 3250259827 ns
+total_time_in_seconds: 3.250260 s
+Throughput: 0.153834 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3261292306 ns for 1 ops 
+        ==> each op takes 3261292306 ns
+total_time_in_seconds: 3.261292 s
+Throughput: 0.153313 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3259885353 ns for 1 ops 
+        ==> each op takes 3259885353 ns
+total_time_in_seconds: 3.259885 s
+Throughput: 0.153380 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3256934419 ns for 1 ops 
+        ==> each op takes 3256934419 ns
+total_time_in_seconds: 3.256934 s
+Throughput: 0.153519 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 3257135213 ns for 1 ops 
+        ==> each op takes 3257135213 ns
+total_time_in_seconds: 3.257135 s
+Throughput: 0.153509 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2754147926 ns for 1 ops 
+        ==> each op takes 2754147926 ns
+total_time_in_seconds: 2.754148 s
+Throughput: 0.181544 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2758240136 ns for 1 ops 
+        ==> each op takes 2758240136 ns
+total_time_in_seconds: 2.758240 s
+Throughput: 0.181275 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2743741924 ns for 1 ops 
+        ==> each op takes 2743741924 ns
+total_time_in_seconds: 2.743742 s
+Throughput: 0.182233 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2739523092 ns for 1 ops 
+        ==> each op takes 2739523092 ns
+total_time_in_seconds: 2.739523 s
+Throughput: 0.182514 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2747270026 ns for 1 ops 
+        ==> each op takes 2747270026 ns
+total_time_in_seconds: 2.747270 s
+Throughput: 0.181999 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2389126369 ns for 1 ops 
+        ==> each op takes 2389126369 ns
+total_time_in_seconds: 2.389126 s
+Throughput: 0.209282 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2394506592 ns for 1 ops 
+        ==> each op takes 2394506592 ns
+total_time_in_seconds: 2.394507 s
+Throughput: 0.208811 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2398094339 ns for 1 ops 
+        ==> each op takes 2398094339 ns
+total_time_in_seconds: 2.398094 s
+Throughput: 0.208499 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2384372552 ns for 1 ops 
+        ==> each op takes 2384372552 ns
+total_time_in_seconds: 2.384373 s
+Throughput: 0.209699 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2390097302 ns for 1 ops 
+        ==> each op takes 2390097302 ns
+total_time_in_seconds: 2.390097 s
+Throughput: 0.209197 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2148413984 ns for 1 ops 
+        ==> each op takes 2148413984 ns
+total_time_in_seconds: 2.148414 s
+Throughput: 0.232730 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2226162210 ns for 1 ops 
+        ==> each op takes 2226162210 ns
+total_time_in_seconds: 2.226162 s
+Throughput: 0.224602 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2171266192 ns for 1 ops 
+        ==> each op takes 2171266192 ns
+total_time_in_seconds: 2.171266 s
+Throughput: 0.230280 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2131924946 ns for 1 ops 
+        ==> each op takes 2131924946 ns
+total_time_in_seconds: 2.131925 s
+Throughput: 0.234530 MEP/s
+===> particionamento CORRETO
+-----------------------
+will call multi_partition_parallel 5 times
+
+multi_partition deltaT(ns): 2137953925 ns for 1 ops 
+        ==> each op takes 2137953925 ns
+total_time_in_seconds: 2.137954 s
+Throughput: 0.233868 MEP/s
+===> particionamento CORRETO
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado
+-----------------------
+nao executado

@@ -1,0 +1,103 @@
+USAGE: ./rodaTodos.sh
+/var/spool/slurmd/job14926/slurm_script rodando no host  wz12
+SLURM_JOB_NAME:  roda_parteB.sh
+SLURM_NODELIST:  wz12
+SLURM_JOB_NODELIST:  wz12
+SLURM_JOB_CPUS_PER_NODE:  8
+nt  10
+MAX_EXECS  5
+Executando 10 vezes com 100000 elementos e 1 threads:
+13.028806
+13.103715
+13.051047
+13.046939
+13.073673
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 2 threads:
+7.449682
+7.341990
+7.535416
+7.440601
+7.568352
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 3 threads:
+5.238445
+5.241137
+5.221321
+5.240476
+5.217979
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 4 threads:
+3.978684
+3.981558
+3.980947
+3.998130
+3.995371
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 5 threads:
+3.250260
+3.261292
+3.259885
+3.256934
+3.257135
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 6 threads:
+2.754148
+2.758240
+2.743742
+2.739523
+2.747270
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 7 threads:
+2.389126
+2.394507
+2.398094
+2.384373
+2.390097
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+Executando 10 vezes com 100000 elementos e 8 threads:
+2.148414
+2.226162
+2.171266
+2.131925
+2.137954
+nao executado
+nao executado
+nao executado
+nao executado
+nao executado
+O tempo total dessa shell foi de 222 segundos
+SLURM_JOB_NAME:  roda_parteB.sh
+SLURM_NODELIST:  wz12
+SLURM_JOB_NODELIST:  wz12
+SLURM_JOB_CPUS_PER_NODE:  8
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             14926     debug roda_par   nobody  R       3:42      1 wz12
